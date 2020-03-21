@@ -8,7 +8,6 @@ var needUpper = document.getElementById ("needUpper");
 var needSymbol = document.getElementById ("needSymbol");
 var needNumber = document.getElementById ("needNumber");
 var passLength = document.getElementById ("passLength");
-console.log(uppercase)
 
 
 //set length to what they choose
@@ -16,6 +15,17 @@ console.log(uppercase)
 
 //start off sequential
 //true use array, false not use array
+
+
+// function continueLoop() {
+//   for (let i = 0; i < uppercase.length; i++) {
+//     outputPass.push(uppercase[Math.floor(Math.random()*uppercase.length)]);
+//   }
+// }
+// console.log (continueLoop(symbols))
+
+
+
 
 // Write password to the #password input
 function writePassword() { 
@@ -26,15 +36,19 @@ function writePassword() {
   var integerPass = parseFloat(passLength.value);
   
   var outputPass = [];
+  // var outputString = outputPass.toString();
 
   for (let i = 0; i < integerPass; i++) {
-    //  outputPass += lowercase.charAt(Math.floor(Math.random()*passLength));
-      // outputPass += lowercase[Math.floor(Math.random()*lowercase.length)];
       outputPass.push(lowercase[Math.floor(Math.random()*lowercase.length)]);
       console.log(outputPass)
   }
+
   return outputPass;
-}
+  
+  // if (return === Array) {
+  //   outputPass
+  }
+
 console.log(writePassword());
 
 // var randomUppercase = uppercase[Math.floor(Math.random()*uppercase.length)];
@@ -47,18 +61,20 @@ generateBtn.addEventListener("click", function (event){
   var lowerStart= lowercase
   //Uppercase included if/else statement
   if (needUpper.checked) { 
-    lowerStart +=uppercase;
-  } 
+    lowerStart+=uppercase;
+  };
+  console.log(needUpper)
   //Symbols included if/else statement
   if (needSymbol.checked) {
-    lowerStart +=symbols;
-  }
+    lowerStart+=symbols;
+  };
   //Numbers included if/else statement
   if (needNumber.checked) {
-    lowerStart +=numbers;
-  }
-  password.value=writePassword()
+    lowerStart+=numbers;
+  };
+  password.value=writePassword();
 })
+
 
 
 
