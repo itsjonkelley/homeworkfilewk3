@@ -26,6 +26,21 @@
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
+        <div class="checkBoxes">
+          <div>
+            <input type="checkbox" id="needUpper"> <label for="needUpper">Need Uppercase Letters?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="needSymbol"> <label for="needSymbol">Need Symbols?</label>
+          </div>
+          <div>
+            <input type="checkbox" id="needNumber"> <label for="needNumber">Need Numbers?</label>
+          </div>
+          <div>
+            <label for="passLength">How long do you need the password? (8 minimum and 128 maximum):</label>
+            <input type="number" id="passLength" name="8" min="8" max="128">
+          </div>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
