@@ -47,17 +47,17 @@ generateBtn.addEventListener("click", function (){
   //Uppercase included if/else statement
   if (needUpper.checked) {
     var randomUpper=genRandomChar(uppercase);
-    passResult+= uppercase[randomSymbol]
+    passResult+= uppercase[randomSymbol];
   };
   //Symbols included if/else statement
   if (needSymbol.checked) {
     var randomSymbol=genRandomChar(symbols);
-    passResult+= symbols[randomSymbol]
+    passResult+= symbols[randomSymbol];
   };
   //Numbers included if/else statement
   if (needNumber.checked) {
     var randomNumber=genRandomChar(numbers);
-    passResult+= numbers[randomNumber]
+    passResult+= numbers[randomNumber];
   };
   password.value=writePassword();
 })
