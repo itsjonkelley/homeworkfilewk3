@@ -34,12 +34,9 @@ function writePassword() {
 console.log(writePassword());
 
 function genRandomChar (arr) {
-  var inputCharacter = arr[Math.floor(Math.random()*arr.length)];
+  var inputCharacter = Math.floor(Math.random()* arr.length);
   return inputCharacter;
 }
-
-uppercase [Math.floor(Math.random()*uppercase.length)];
-console.log (uppercase);
 
 
 
@@ -52,7 +49,6 @@ generateBtn.addEventListener("click", function (){
     var randomUpper=genRandomChar(uppercase);
     passResult+= uppercase[randomSymbol]
   };
-  console.log(genRandomChar(randomUpper));
   //Symbols included if/else statement
   if (needSymbol.checked) {
     var randomSymbol=genRandomChar(symbols);
