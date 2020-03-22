@@ -9,24 +9,6 @@ var needSymbol = document.getElementById ("needSymbol");
 var needNumber = document.getElementById ("needNumber");
 var passLength = document.getElementById ("passLength");
 
-
-//set length to what they choose
-//set 1,2,3
-
-//start off sequential
-//true use array, false not use array
-
-
-// function continueLoop() {
-//   for (let i = 0; i < uppercase.length; i++) {
-//     outputPass.push(uppercase[Math.floor(Math.random()*uppercase.length)]);
-//   }
-// }
-// console.log (continueLoop(symbols))
-
-
-
-
 // Write password to the #password input
 function writePassword() { 
   // var password = generatePassword();
@@ -43,7 +25,7 @@ function writePassword() {
       console.log(outputPass)
   }
 
-  return outputPass;
+  return outputPass.join("");
   
   // if (return === Array) {
   //   outputPass
@@ -51,57 +33,37 @@ function writePassword() {
 
 console.log(writePassword());
 
-// var randomUppercase = uppercase[Math.floor(Math.random()*uppercase.length)];
-// console.log(randomUppercase)
+function genRandomChar (arr) {
+  var inputCharacter = arr[Math.floor(Math.random()*arr.length)];
+  return inputCharacter;
+}
+
+uppercase [Math.floor(Math.random()*uppercase.length)];
+console.log (uppercase);
+
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", function (event){
-  event.preventDefault();
+generateBtn.addEventListener("click", function (){
+  var passResult= writePassword();
   var lowerStart= lowercase
   //Uppercase included if/else statement
-  if (needUpper.checked) { 
-    lowerStart+=uppercase;
+  if (needUpper.checked) {
+    var randomUpper=genRandomChar(uppercase);
+    passResult+= uppercase[randomSymbol]
   };
-  console.log(needUpper)
+  console.log(genRandomChar(randomUpper));
   //Symbols included if/else statement
   if (needSymbol.checked) {
-    lowerStart+=symbols;
+    var randomSymbol=genRandomChar(symbols);
+    passResult+= symbols[randomSymbol]
   };
   //Numbers included if/else statement
   if (needNumber.checked) {
-    lowerStart+=numbers;
+    var randomNumber=genRandomChar(numbers);
+    passResult+= numbers[randomNumber]
   };
   password.value=writePassword();
 })
-
-
-
-
-// function continuePullUpper(){
-//   for (let i = 0; index < integerPass; i++) {
-//     outputPass.push(uppercase[Math.floor(Math.random()*uppercase.length)]);
-//       console.log(outputPass)
-//   }
-//   return outputPass;
-// }
-// function continuePullSymbol(){
-//   for (let i = 0; index < integerPass; i++) {
-//     outputPass.push(symbols[Math.floor(Math.random()*symbols.length)]);
-//       console.log(outputPass)  
-//   }
-//   return outputPass;
-// }
-// function continuePullNumber(){
-//   for (let i = 0; index < integerPass; i++) {
-//     outputPass.push(numbers[Math.floor(Math.random()*numbers.length)]);
-//       console.log(outputPass)  
-//   }
-//   return outputPass;
-// }
-
-
-
-
 
 
